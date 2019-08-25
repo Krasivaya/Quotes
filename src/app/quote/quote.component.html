@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div *ngFor='let quote of quotes;let i = index'>
+                        <p appHighlight>
+                            <!-- {{quote.id}} -->
+                            <br>{{quote.description}}<br><span id="show"></span><span id="sho"></span>
+                        </p>
+                        <p><b>{{quote.author}}</b></p>
+                        <button class="cbtn btn btn-primary" onclick="like()"><img class="like" src="../../assets/image/a1.png"></button>
+                        <button class="cbtn btn btn-primary" onclick="dislike()"><img class="like" src="../../assets/image/a2.png"></button>
+                        <button (click)="details(i)" class="cbtn btn btn-primary">More</button>
+                        <app-qoute-details *ngIf='quote.showName' [quote]='quote' (isComplete)="deleteQuote($event, i)"></app-qoute-details>
+                    </div>
+                    <!-- <p *ngIf="goals.length > 4">Many goals</p> -->
+                </div>
+                <div class="col-md-6">
+                  <app-quote-form (addQuote) = "addNewQuote($event)"></app-quote-form>
+                </div>
+            </div>
+        </div>
+        <script>
+            let likes = 1;
+            function like() {
+            document.getElementById("show").innerHTML = likes;
+            likes = likes + 1;
+            }
+            let  dislikes = 1;
+            function dislike() {
+            document.getElementById("sho").innerHTML = likes;
+            dislikes = dislikes + 1;
+            }
+        </script>
+    </body> 
+</html>
