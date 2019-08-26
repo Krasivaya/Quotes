@@ -82,13 +82,10 @@
                 <b>{{ quote.author }}</b>
               </h4>
               <br />
-              <button class="cbtn btn btn-primary" onclick="like()">
-                <img class="like" src="../../assets/image/a1.png" /> Like  <span id="show"></span
-                >
+              <!-- <button class="cbtn btn btn-primary" (click)="like()">Like {{ likes }}
               </button>
-              <button class="cbtn btn btn-primary" onclick="dislike()">
-                <img class="like" src="../../assets/image/a2.png" /> Dislike  <span id="sho"></span>
-              </button>
+              <button class="cbtn btn btn-primary" (click)="dislike()"> Dislike {{ dislikes }}
+              </button> -->
               <button (click)="details(i)" class="cbtn btn btn-primary">
                 More
               </button>
@@ -126,17 +123,5 @@
         </div>
       </div>
     </div>
-    <script>
-      let likes = 1;
-      function like() {
-        document.getElementById("show").innerHTML = likes;
-        likes = likes + 1;
-      }
-      let dislikes = 1;
-      function dislike() {
-        document.getElementById("sho").innerHTML = dislikes;
-        dislikes = dislikes + 1;
-      }
-    </script>
   </body>
 </html>

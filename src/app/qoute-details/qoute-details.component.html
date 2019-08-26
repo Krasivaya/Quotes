@@ -1,18 +1,22 @@
-<p>
-  Submitted by <b>{{quote.name}}</b><br>
-  <b>{{ quote.completeDate | dateCount }} Days </b>ago<br>
-  <!-- Upvotes <b></b><br>
-  Downvotes <b></b><br> -->
+<p><br>
+  Submitted by <b>{{ quote.name }}</b
+  ><br />
+  <b>{{ quote.completeDate | dateCount }}Days </b>ago<br />
+  Upvotes <b>{{ likes }}</b><br /> 
+  Downvotes <b>{{ dislikes }}</b><br />
 </p>
-<p></p>
+<button class="cbtn btn btn-success" (click)="like()">Like 
+</button>
+<button class="cbtn btn btn-outline-warning" (click)="dislike()"> Dislike 
+</button>
 <button (click)="quoteDelete(true)" class="btn btn-outline-danger">
   Delete
 </button>
-<div class="modal">
+<!-- <div class="modal">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Modal title</h5>
+          <h5 class="modal-title">Quote</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -21,9 +25,9 @@
           <p>Modal body text goes here.</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Save changes</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Cancel</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
