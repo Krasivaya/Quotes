@@ -27,6 +27,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 [Gitlab](https://gitlab.com/Krasivaya?nav_source=navbar)
 
 ## Live Site
+LiveSite [Quotes](https://krasivaya.github.io/Quotes/)
 
 ## Further help
 
