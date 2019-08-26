@@ -1,39 +1,142 @@
 <!DOCTYPE html>
 <html>
-    <head></head>
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div *ngFor='let quote of quotes;let i = index'>
-                        <p appHighlight>
-                            <!-- {{quote.id}} -->
-                            <br>{{quote.description}}<br><span id="show"></span><span id="sho"></span>
-                        </p>
-                        <p><b>{{quote.author}}</b></p>
-                        <button class="cbtn btn btn-primary" onclick="like()"><img class="like" src="../../assets/image/a1.png"></button>
-                        <button class="cbtn btn btn-primary" onclick="dislike()"><img class="like" src="../../assets/image/a2.png"></button>
-                        <button (click)="details(i)" class="cbtn btn btn-primary">More</button>
-                        <app-qoute-details *ngIf='quote.showName' [quote]='quote' (isComplete)="deleteQuote($event, i)"></app-qoute-details>
-                    </div>
-                    <!-- <p *ngIf="goals.length > 4">Many goals</p> -->
-                </div>
-                <div class="col-md-6">
-                  <app-quote-form (addQuote) = "addNewQuote($event)"></app-quote-form>
-                </div>
+  <head></head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Quotes</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarColor02"
+        aria-controls="navbarColor02"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#row">Authors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#row">Quotes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#row">Collections</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="text"
+            placeholder="Search"
+          />
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
+    <div class="container">
+      <br />
+
+      <div class="jumbotron">
+        <h1 class="display-3">Quotes</h1>
+        <hr class="my-4" />
+        <p class="lead">
+          "If there's one thing you learn by working<br />
+          on a lot of different Web sites, <br />
+          it's that almost any design idea-no matter<br />how appallingly
+          bad-can be made usable in the<br />right circumstances, with enough
+          effort."<br />
+          <b>― Steve Krug</b>
+        </p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#row" role="button"
+            >Learn more</a
+          >
+        </p>
+      </div>
+
+      <!-- <h1>Quotes</h1> -->
+      <!-- <hr /> -->
+      <div class="row" id="row">
+        <!-- <div class="col-md-6"> -->
+        <div *ngFor="let quote of quotes; let i = index">
+          <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+            <div class="card-header">
+              <p class="card-text" appHighlight>
+                {{ quote.description }}<br />
+              </p>
             </div>
+            <div class="card-body">
+              <h4>
+                <b>{{ quote.author }}</b>
+              </h4>
+              <br />
+              <button class="cbtn btn btn-primary" onclick="like()">
+                <img class="like" src="../../assets/image/a1.png" /> Like  <span id="show"></span
+                >
+              </button>
+              <button class="cbtn btn btn-primary" onclick="dislike()">
+                <img class="like" src="../../assets/image/a2.png" /> Dislike  <span id="sho"></span>
+              </button>
+              <button (click)="details(i)" class="cbtn btn btn-primary">
+                More
+              </button>
+              <app-qoute-details
+                *ngIf="quote.showName"
+                [quote]="quote"
+                (isComplete)="deleteQuote($event, i)"
+              >
+              </app-qoute-details>
+            </div>
+          </div>
+
+          <!-- <p appHighlight>
+              {{quote.id}}
+              <br />{{ quote.description }}<br /><span id="show"></span
+              ><span id="sho"></span>
+            </p>
+            <p>
+              <b>{{ quote.author }}</b>
+            </p>
+            <button class="cbtn btn btn-primary" onclick="like()">
+              <img class="like" src="../../assets/image/a1.png" /> Like
+            </button>
+            <button class="cbtn btn btn-primary" onclick="dislike()">
+              <img class="like" src="../../assets/image/a2.png" /> Dislike
+            </button>
+            <button (click)="details(i)" class="cbtn btn btn-primary">
+              More
+            </button> -->
         </div>
-        <script>
-            let likes = 1;
-            function like() {
-            document.getElementById("show").innerHTML = likes;
-            likes = likes + 1;
-            }
-            let  dislikes = 1;
-            function dislike() {
-            document.getElementById("sho").innerHTML = likes;
-            dislikes = dislikes + 1;
-            }
-        </script>
-    </body> 
+        <!-- <p *ngIf="goals.length > 4">Many goals</p> -->
+        <!-- </div> -->
+        <div class="col-md-6">
+          <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+        </div>
+      </div>
+    </div>
+    <script>
+      let likes = 1;
+      function like() {
+        document.getElementById("show").innerHTML = likes;
+        likes = likes + 1;
+      }
+      let dislikes = 1;
+      function dislike() {
+        document.getElementById("sho").innerHTML = dislikes;
+        dislikes = dislikes + 1;
+      }
+    </script>
+  </body>
 </html>

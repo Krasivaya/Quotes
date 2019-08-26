@@ -1,21 +1,38 @@
-body{
-    background-color: rgb(11, 67, 83);
-    color: #fff;
-    height: 100%;
-    width: 100%;
+body {
+  background-color: rgb(11, 67, 83);
+  color: #fff;
+  height: 100%;
+  width: 100%;
+}
+a {
+  font-size: 25px;
+  padding: 0px 90px;
+}
+li{
+    padding: 0px 30px
 }
 h1 {
-    text-align: center;
-    font-size: 50px;
-  }
-  
+  text-align: center;
+  font-size: 50px;
+}
+
 p {
-font-size: 20px;
-padding-top: 20px;
+  font-size: 20px;
+  padding-top: 20px;
 }
-.cbtn{
-    margin-right: 10px;
+.cbtn {
+  margin-right: 10px;
 }
-.like{
-    width: 20px;
+.like {
+  width: 20px;
+}
+.jumbotron {
+  color: rgb(3, 61, 77);
+  background: rgba(231, 249, 255, 0.698);
+}
+.mb-3 {
+  margin: 10px;
+}
+.lead {
+  text-align: center;
 }
