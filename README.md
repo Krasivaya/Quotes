@@ -30,6 +30,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 LiveSite [Quotes](https://krasivaya.github.io/Quotes/)
 
 ## License
+[MIT](https://choosealicense.com/licenses/mit/)
 
 ## Further help
 
