@@ -4,15 +4,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
  By **Carine I. SEMWAGA**
  
 ## Description
- The Akan people of Ghana frequently name their children after the day of the week they were born and according to their gender.
+ Quotes was create to bring you quotes from different Authors, collections and eras.
  
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
